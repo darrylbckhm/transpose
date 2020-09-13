@@ -9,8 +9,8 @@
 
 BOT_NAME = 'transpose'
 
-SPIDER_MODULES = ['transpose.spiders']
-NEWSPIDER_MODULE = 'transpose.spiders'
+SPIDER_MODULES = ['crawler.spiders.real_estate']
+NEWSPIDER_MODULE = 'crawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -86,3 +86,15 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+ITEM_PIPELINES = {
+    'crawler.pipelines.WriteToDBPipeline': 1,
+    # replace scraper with your scrapy project name
+}
+
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+DYNAMODB_PIPELINE_REGION_NAME = 'us-east-1'
+DYNAMODB_PIPELINE_TABLE_NAME = 'local.test'
+DYNAMODB_ENDPOINT_URL = 'http://localhost:4566'
