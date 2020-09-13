@@ -21,7 +21,9 @@ setuptools.setup(
         'boto3',
         'pytest',
         'scrapy',
+        'scrapy-dynamodb',
         'marshmallow_dataclass',
+        'twisted'
     ],
     entry_points={
           'console_scripts': ['ftf=bin.transpose:main'],
