@@ -5,7 +5,7 @@ import logging
 from scrapy import Selector
 from boto3.dynamodb.types import TypeSerializer
 from botocore.exceptions import ClientError
-from lib.constants import RE_URLS
+from lib.python.constants import RE_URLS
 from crawler.spiders.real_estate.items import RealEstateItem
 
 

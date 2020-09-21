@@ -6,8 +6,8 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-from lib.dynamodb import DynamoDBClient
-from crawler.spiders.real_estate.itemss import RealEstateItem
+from lib.python.dynamodb import DynamoDBClient
+from crawler.spiders.real_estate.items import RealEstateItem
 
 
 class WriteToDBPipeline:
@@ -36,6 +36,6 @@ class WriteToDBPipeline:
         real_estate_item['location_type'] = item['location_type']
         real_estate_item['view_type'] = item['view_type']
         
-        self.dynamodb.put_item_v2(self.table_name, real_estate_item, dataclass=PropertyItem)
+        self.dynamodb.put_item_v2(self.table_name, real_estate_item, dataclass=RealEstateItem)
 
         return item
