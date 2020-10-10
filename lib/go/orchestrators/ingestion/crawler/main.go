@@ -1,16 +1,16 @@
 package main
 
 import (
-    "os"
+    //"os"
     "fmt"
     "encoding/json"
-    "net/http"
+    //"net/http"
     "strings"
     "time"
 	"github.com/gocolly/colly"
-    "github.com/aws/aws-sdk-go/aws"
-    "github.com/aws/aws-sdk-go/aws/session"
-    "github.com/aws/aws-sdk-go/service/dynamodb"
+    //"github.com/aws/aws-sdk-go/aws"
+    //"github.com/aws/aws-sdk-go/aws/session"
+    //"github.com/aws/aws-sdk-go/service/dynamodb"
 )
 
 
@@ -39,7 +39,7 @@ func main() {
         })
         _p["desc"] = strings.Join(strings.Split(e.ChildText("p"), "\n"), " ")
 
-        res, err := json.Marshal(_p)
+        _, err := json.Marshal(_p)
 
         if err != nil {
             fmt.Println(err)

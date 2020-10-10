@@ -23,7 +23,7 @@ setuptools.setup(
         'scrapy',
         'scrapy-dynamodb',
         'marshmallow_dataclass',
-        'twisted'
+        'twisted',
     ],
     entry_points={
           'console_scripts': ['ftf=bin.transpose:main'],
